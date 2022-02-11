@@ -46,7 +46,7 @@ namespace Geta.Optimizely.Sitemaps.Repositories
             // contains the sitemap URL, for example en/sitemap.xml
             var host = url.Path.TrimStart('/').ToLowerInvariant();
 
-            var siteDefinition = _siteDefinitionResolver.GetByHostname(url.Host, true, out _);
+            var siteDefinition = _siteDefinitionResolver.GetByHostname(url.Authority, true, out _);
             if (siteDefinition == null)
             {
                 return null;
